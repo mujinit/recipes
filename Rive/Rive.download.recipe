@@ -16,18 +16,31 @@
 	<key>MinimumVersion</key>
 	<string>1.0</string>
 	<key>Process</key>
-	<array>
-		<dict>
-			<key>Arguments</key>
-			<dict>
-				<key>Argument1</key>
-				<string>Value1</string>
-				<key>Argument2</key>
-				<string>Value2</string>
-			</dict>
-			<key>Processor</key>
-			<string>ProcessorName</string>
-		</dict>
-	</array>
+    <array>
+        <dict>
+            <key>Processor</key>
+            <string>URLDownloader</string>
+            <key>Arguments</key>
+            <dict>
+                <key>url</key>
+                <string>%DOWNLOAD_URL%</string>
+                <key>filename</key>
+                <string>%NAME%.dmg</string>
+            </dict>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>EndOfCheckPhase</string>
+        </dict>
+        <dict>
+            <key>Processor</key>
+            <string>CodeSignatureVerifier</string>
+            <key>Arguments</key>
+            <dict>
+                <key>input_path</key>
+                <string>%pathname%/Rive.app</string>
+            </dict>
+        </dict>
+    </array>
 </dict>
 </plist>
