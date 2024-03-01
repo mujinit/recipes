@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest Rive disk image and imports into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.mujinit.download.rive</string>
+    <string>com.github.mujinit.download.Rive</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -24,21 +24,39 @@
             <string>Rive</string>
             <key>name</key>
             <string>%NAME%</string>
+            <!-- <key>postinstall_script</key>
+            <string>#!/bin/sh
+[ -d /usr/local/bin ] || mkdir -p /usr/local/bin
+/bin/cp -f -p /Applications/Rive.app/Contents/Resources/mate /usr/local/bin/mate
+</string>
+            <key>postuninstall_script</key>
+            <string>#!/bin/sh
+[ -e /usr/local/bin/mate ] &amp;&amp; rm -f /usr/local/bin/mate
+</string> -->
             <key>unattended_install</key>
             <true/>
         </dict>
     </dict>
     <key>MinimumVersion</key>
-    <string>1.0</string>
+    <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.mujinit.download.rive</string>
+    <string>com.github.mujinit.download.Rive</string>
     <key>Process</key>
     <array>
+        <dict>
+            <key>Processor</key>
+            <string>Unarchiver</string>
+            <key>Arguments</key>
+            <dict>
+                <key>purge_destination</key>
+                <true/>
+            </dict>
+        </dict>
         <dict>
             <key>Arguments</key>
             <dict>
                 <key>pkg_path</key>
-                <string>%pathname%</string>
+                <string>%RECIPE_CACHE_DIR%</string>
                 <key>repo_subdirectory</key>
                 <string>%MUNKI_REPO_SUBDIR%</string>
             </dict>
