@@ -5,7 +5,7 @@
     <key>Description</key>
     <string>Downloads the latest Rive disk image and imports into Munki.</string>
     <key>Identifier</key>
-    <string>com.github.mujinit.download.Rive</string>
+    <string>com.github.mujinit.munki.Rive</string>
     <key>Input</key>
     <dict>
         <key>NAME</key>
@@ -40,7 +40,7 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.mujinit.download.Rive</string>
+    <string>com.github.mujinit.munki.Rive</string>
     <key>Process</key>
     <array>
         <dict>
