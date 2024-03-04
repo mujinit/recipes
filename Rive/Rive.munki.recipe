@@ -40,10 +40,10 @@
     <key>MinimumVersion</key>
     <string>0.2.0</string>
     <key>ParentRecipe</key>
-    <string>com.github.mujinit.munki.Rive</string>
+    <string>com.github.mujinit.download.Rive</string>
     <key>Process</key>
     <array>
-        <dict>
+        <!-- <dict>
             <key>Processor</key>
             <string>Unarchiver</string>
             <key>Arguments</key>
@@ -51,7 +51,7 @@
                 <key>purge_destination</key>
                 <true/>
             </dict>
-        </dict>
+        </dict> -->
         <dict>
             <key>Arguments</key>
             <dict>
